@@ -1,0 +1,21 @@
+.library-body{
+    width: 94%;
+    height: 90%;
+    padding: 3%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    justify-content: space-between;
+}
+
+.playlist-card {
+    width: 15%;
+    height: 35%;
+    border-radius: 20px;
+    background-color: #5f6f52;
+    border: 1px solid #a9b388 .5;
+    padding: 1%;
+    margin-bottom: 2%;
+    background: rgb(73,82,53);
+    background: linear-gradient(0deg, rgba(73,82,53,1) 0%, rgba(169,179,136,1) 100%);
+}
