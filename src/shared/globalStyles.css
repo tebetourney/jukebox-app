@@ -3,4 +3,7 @@
     height: 100%;
     background-color: #141414;
     border-radius: 30px;
+    background-color: #162114;
+    opacity: 1;
+    background-image:  repeating-radial-gradient( circle at center left, transparent 0, #162114 40px ), repeating-linear-gradient( #14141455, #141414 );
 }

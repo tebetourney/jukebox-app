@@ -9,8 +9,9 @@
 }
 
 .playlist-card {
+    position: relative;
     width: 15%;
-    height: 35%;
+    height: 45%;
     border-radius: 20px;
     background-color: #5f6f52;
     border: 1px solid #a9b388 .5;
@@ -18,4 +19,58 @@
     margin-bottom: 2%;
     background: rgb(73,82,53);
     background: linear-gradient(0deg, rgba(73,82,53,1) 0%, rgba(169,179,136,1) 100%);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.playlist-card:hover {
+    transform: scale(1.02);
+}
+
+.playlist-card:hover .playlist-fade {
+    opacity: .75;
+}
+
+.playlist-image {
+    width: 100%;
+    border-radius: 15px;
+    aspect-ratio: 1;
+}
+
+.playlist-title {
+    font-weight: 650;
+    font-size: 16px;
+    color: #fefae0;
+    margin: 10px 0px 10px;
+    display: -webkit-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.playlist-subtitle {
+    font-weight: 400;
+    font-size: 12px;
+    margin: 0px 0px 0px;
+    color: #908471;
+
+}
+
+.playlist-fade {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    width: 84%;
+    height: 22%;
+    border-radius: 20px;
+    background: rgb(95,111,82);
+    background: linear-gradient(0deg,  rgba(73,82,53,1) 0%, rgba(169,179,136,1) 100%);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 8%;
+    transition: 0.5s ease;
 }
