@@ -18,12 +18,23 @@
 .marquee {
     white-space: nowrap;
     display: inline-block;
+    animation: marquee 12s linear infinite;
+    padding-left: 100%;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
 }
 
 .album-info {
     font-size: 14px;
     font-weight: 500;
-    color: #fefae0;
+    color: #9b997b;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
@@ -35,6 +46,6 @@
 .album-release {
     font-size: 12px;
     font-weight: 400;
-    color: #fefae0;
+    color: #9b997b;
     margin-top: 10px;    
 }
