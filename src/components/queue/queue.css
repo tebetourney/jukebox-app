@@ -30,6 +30,34 @@
 
 .queue-list {
     height: 80%;
+    width: 100%;
     overflow-y: auto;
-    
+}
+
+.queue-list::-webkit-scrollbar {
+    display: none;
+}
+
+.queue-item {
+    width: 100%;
+    justify-content: space-between;
+    padding: 5px 0px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #e3ded1;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.queue-item:hover {
+    transform: scale(0.95);
+}
+
+.queue-item p {
+    margin: 0px;
+}
+
+.track-name {
+    width: 75%;
+    text-overflow: ellipsis;
 }
