@@ -1,0 +1,7 @@
+.box-container {
+    justify-content: space-between;
+    height: 54px;
+    --boxSize: 4px;
+    --gutter: 8px;
+    width: calc((var(--boxSize)+var(--gutter)) * 13);
+}
