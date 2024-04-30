@@ -7,43 +7,50 @@ import SongCard from '../../components/songCard/songCard';
 import AudioPlayer from '../../components/audioPlayer/audioPlayer';
 
 export default function Player() {
-  
   const location = useLocation();
   const [tracks, setTracks] = useState([]);
   const [currentTrack, setCurrentTrack] = useState({});
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if(location.state){
-      apiClient.get("playlists/" + location.state?.id + "/tracks")
-      .then((res)=> {
-        setTracks(res.data.items);
-        setCurrentTrack(res.data.items[0].track);
-      });
+    if (location.state) {
+      apiClient
+        .get("playlists/" + location.state?.id + "/tracks")
+        .then((res) => {
+          const newTracks = res.data.items || []; // fixing null
+          setTracks(newTracks);
+          setCurrentTrack(newTracks[0]?.track || {}); // fixing null
+        });
     }
-  },[location.state]);
-  
+  }, [location.state]);
+
   useEffect(() => {
-    if (tracks.length > 0) {
-      setCurrentTrack(tracks[currentIndex]?.track);
+    if (tracks.length > 0 && currentIndex < tracks.length) {
+      setCurrentTrack(tracks[currentIndex]?.track || {}); // fixing null
     }
-  }, [currentIndex, tracks]); 
-  
+  }, [currentIndex, tracks]);
 
   return (
     <div className="screen-container flex">
-      <div className="left-player-body">
-        <AudioPlayer 
-          currentTrack={currentTrack} 
-          total={tracks}
-          currentIndex={currentIndex} 
-          setCurrentIndex={setCurrentIndex}
-          />
-      </div>
-      <div className="right-player-body">
-        <SongCard album={currentTrack.album}/>
-        <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />
-      </div>
+      {tracks.length > 0 ? (
+        <>
+          <div className="left-player-body">
+            <AudioPlayer
+              currentTrack={currentTrack}
+              total={tracks}
+              currentIndex={currentIndex}
+              setCurrentIndex={setCurrentIndex}
+            />
+          </div>
+          <div className="right-player-body">
+            <SongCard album={currentTrack?.album} /> 
+            <Queue tracks={tracks} setCurrentIndex={setCurrentIndex} />
+          </div>
+        </>
+      ) : (
+        <div className="loading-message">Loading playlist...</div> 
+      )}
     </div>
-  )
+  );
 }
+

@@ -97,6 +97,9 @@ export default function AudioPlayer({ total }) {
       }, [isPlaying]);
   
     useEffect(() => {
+        if (!currentTrackNode || !audioRef.current) {
+            return; // fixing null error
+          }  
       audioRef.current.pause();
       audioRef.current.src = currentTrackNode.track?.preview_url;
       setTrackProgress(0);
@@ -137,7 +140,7 @@ export default function AudioPlayer({ total }) {
           <ProgressCircle 
             percentage={currentPercentage}
             isPlaying={isPlaying}
-            image={currentTrackNode.track?.album?.images[0]?.url}
+            image={currentTrackNode?.track?.album?.images[0]?.url}
             size={300}
             color="#895d2b"
           />
