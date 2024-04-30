@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
 .action-btn:hover {
@@ -27,4 +28,16 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: inset -4px -4px 10px #162114, inset 4px 4px 10px 1px #a9b388;
 }
+
+.play-pause-btn.active {
+    transition: all 0.2s ease-in-out;
+    box-shadow: inset -4px -4px 10px #6a6f4c, inset 4px 4px 10px 1px #294122;
+}
+
+.play-pause-btn:hover {
+    transform: scale(1.1);
+}
+

@@ -15,13 +15,14 @@ export default function Controls({
       <div className='action-btn flex' onClick={handlePrev}>
         <IoPlaySkipBack />
       </div>
-      <div className="play-pause-btn flex" onClick={() => setIsPlaying(!isPlaying)}>
+      <div className={isPlaying ? "play-pause-btn flex active" : "play-pause-btn flex"} 
+      onClick={() => setIsPlaying(!isPlaying)}>
         {isPlaying ? <IoPause /> : <IoPlay />}
       </div>
       <div className='action-btn flex' onClick={handleNext}>
         <IoPlaySkipForward />
       </div>
-    </div>;
+    </div>
   </IconContext.Provider>
   );
 }
