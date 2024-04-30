@@ -5,7 +5,7 @@ import WaveAnimation from './waveAnimation';
 import Controls from './controls';
 
 export default function AudioPlayer({ currentTrack, currentIndex, setCurrentIndex, total }) {
-  const [isPlaying, setIsPlaying] = useState(true);
+  const [isPlaying, setIsPlaying] = useState(false);
   const [trackProgress, setTrackProgress] = useState(0);
   
   const audioRef = useRef(new Audio(total[currentIndex]?.track.preview_url)); 

@@ -11,14 +11,14 @@ export default function Controls({
 }) {
   return ( 
   <IconContext.Provider value={{size: "35px", color: "#cbb89d"}}>
-    <div className="controls-wrapper">
-      <div className='action-btn' onClick={handlePrev}>
+    <div className="controls-wrapper flex">
+      <div className='action-btn flex' onClick={handlePrev}>
         <IoPlaySkipBack />
       </div>
-      <div className="play-pause-btn" onClick={() => setIsPlaying(!isPlaying)}>
+      <div className="play-pause-btn flex" onClick={() => setIsPlaying(!isPlaying)}>
         {isPlaying ? <IoPause /> : <IoPlay />}
       </div>
-      <div className='action-btn' onClick={handleNext}>
+      <div className='action-btn flex' onClick={handleNext}>
         <IoPlaySkipForward />
       </div>
     </div>;
