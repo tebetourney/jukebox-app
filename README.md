@@ -30,5 +30,5 @@ The primary data structure implemented is an **indexed collection of arrays**. F
 
 ## Can I see this so-called Jukebox in action?
 
-Indeed. Enter the Jukebox: *video link goes here*
+Indeed. [*Enter the Jukebox*](https://youtu.be/7KWIF7qvRDY)
 
