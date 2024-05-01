@@ -5,6 +5,7 @@ import apiClient from '../../spotify';
 import Queue from '../../components/queue/queue';
 import SongCard from '../../components/songCard/songCard';
 import AudioPlayer from '../../components/audioPlayer/audioPlayer';
+import Widgets from '../../components/widgets/widgets';
 
 
 export default function Player() {
@@ -47,6 +48,7 @@ export default function Player() {
               currentIndex={currentIndex} 
               setCurrentIndex={setCurrentIndex} 
             />
+          <Widgets artistID={currentTrack?.album} />
           </div>
           <div className="right-player-body">
             <SongCard album={currentTrack?.album || {}} /> 
