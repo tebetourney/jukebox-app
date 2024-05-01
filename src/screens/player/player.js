@@ -48,7 +48,7 @@ export default function Player() {
               currentIndex={currentIndex} 
               setCurrentIndex={setCurrentIndex} 
             />
-          <Widgets artistID={currentTrack?.album} />
+          <Widgets artistID={currentTrack?.album?.artists[0]?.id} />
           </div>
           <div className="right-player-body">
             <SongCard album={currentTrack?.album || {}} /> 
